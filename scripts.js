@@ -24,14 +24,21 @@ const countDownClock = (number) => {
   }
 
   function displayTimeLeft(seconds) {
-    minutesElement.textContent = Math.floor(((seconds % 86400) % 3600) / 60)
-      .toString()
-      .padStart(2, "0");
-    secondsElement.textContent = (
-      seconds % 60 < 10 ? `0${seconds % 60}` : seconds % 60
-    )
-      .toString()
-      .padStart(2, "0");
+    const minutes = Math.floor(((seconds % 86400) % 3600) / 60);
+    const paddedMinutes = minutes.toString().padStart(2, "0");
+
+    const sec = seconds % 60;
+    const paddedSeconds = sec.toString().padStart(2, "0");
+
+    // Update the individual digit containers for minutes
+    const minuteDigits = d.querySelectorAll(".minutes .digit");
+    minuteDigits[0].textContent = paddedMinutes[0];
+    minuteDigits[1].textContent = paddedMinutes[1];
+
+    // Update the individual digit containers for seconds
+    const secondDigits = d.querySelectorAll(".seconds .digit");
+    secondDigits[0].textContent = paddedSeconds[0];
+    secondDigits[1].textContent = paddedSeconds[1];
   }
 };
 

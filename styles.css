@@ -1,8 +1,109 @@
+html {
+  height: 100%;
+  width: 100%;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
 body {
   background-color: #e3a287;
   color: #da291c;
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
 }
 
 .timer-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   font-size: 20vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.countdown-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.digit {
+  border: 1px solid #db2f20;
+  border-radius: 10px;
+  padding: 0px 20px;
+  font-weight: bold;
+  height: 18vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.minutes {
+  display: flex;
+  gap: 10px;
+}
+
+.seconds {
+  display: flex;
+  gap: 10px;
+}
+
+.text-container {
+  max-width: 90%;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  text-align: center;
+  margin-bottom: 160px;
+  font-size: 20px;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  margin-bottom: 100px;
+}
+
+.linkbutton {
+  background-color: #db2f20;
+  border-radius: 5px;
+  width: 100px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.linkbutton:hover {
+  background-color: #db6156;
+}
+
+.reddbarna {
+  background-color: #ffffff;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  bottom: 50px;
+}
+
+@media (max-width: 480px) {
+  .reddbarna {
+    bottom: 10px;
+  }
+
+  .text-container {
+    max-width: 90%;
+    margin-bottom: 50px;
+  }
 }
