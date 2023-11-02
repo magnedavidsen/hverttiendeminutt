@@ -15,7 +15,7 @@ const countDownClock = (number) => {
 
       if (secondsLeft <= 0) {
         //reset counter
-        then = Date.now() + seconds * 1000;
+        then = Date.now() + 600 * 1000;
       }
 
       displayTimeLeft(secondsLeft);
