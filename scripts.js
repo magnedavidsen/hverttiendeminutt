@@ -1,20 +1,11 @@
-const countDownClock = (number = 100, format = "seconds") => {
+const countDownClock = (number) => {
   const d = document;
 
   const minutesElement = d.querySelector(".minutes");
   const secondsElement = d.querySelector(".seconds");
-  const milliSecondsElement = d.querySelector(".milliseconds");
-  let countdown;
-  convertFormat(format);
 
-  function convertFormat(format) {
-    switch (format) {
-      case "seconds":
-        return timer(number);
-      case "minutes":
-        return timer(number * 60);
-    }
-  }
+  let countdown;
+  timer(number);
 
   function timer(seconds) {
     const now = Date.now();
@@ -29,27 +20,25 @@ const countDownClock = (number = 100, format = "seconds") => {
       }
 
       displayTimeLeft(secondsLeft);
-    }, 10);
+    }, 1000);
   }
 
   function displayTimeLeft(seconds) {
-    minutesElement.textContent = Math.floor(((seconds % 86400) % 3600) / 60);
-    secondsElement.textContent =
-      seconds % 60 < 10 ? `0${seconds % 60}` : seconds % 60;
-    milliSecondsElement.textContent = (new Date().getMilliseconds() / 100)
-      .toFixed(0)
+    minutesElement.textContent = Math.floor(((seconds % 86400) % 3600) / 60)
+      .toString()
+      .padStart(2, "0");
+    secondsElement.textContent = (
+      seconds % 60 < 10 ? `0${seconds % 60}` : seconds % 60
+    )
+      .toString()
       .padStart(2, "0");
   }
 };
 
-/*
-    start countdown
-    enter number and format
-    days, hours, minutes or seconds
-  */
 const now = new Date();
 const minutes = now.getMinutes();
 const ceiling = Math.ceil(minutes / 10) * 10;
-const countdown = ceiling - minutes;
+const countdownMinutes = ceiling - minutes;
+const countdownSeconds = countdownMinutes * 60 - now.getSeconds();
 
-countDownClock(countdown, "minutes");
+countDownClock(countdownSeconds);
