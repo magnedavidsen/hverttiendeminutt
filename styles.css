@@ -1,3 +1,8 @@
+body {
+  background-color: #e3a287;
+  color: #da291c;
+}
+
 .timer-container {
   font-size: 20vw;
 }
