@@ -8,15 +8,14 @@ const countDownClock = (number) => {
   timer(number);
 
   function timer(seconds) {
-    const now = Date.now();
-    const then = now + seconds * 1000;
+    let then = Date.now() + seconds * 1000;
 
     countdown = setInterval(() => {
       const secondsLeft = Math.round((then - Date.now()) / 1000);
 
       if (secondsLeft <= 0) {
-        clearInterval(countdown);
-        return;
+        //reset counter
+        then = Date.now() + seconds * 1000;
       }
 
       displayTimeLeft(secondsLeft);
