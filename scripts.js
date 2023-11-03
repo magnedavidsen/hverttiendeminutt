@@ -7,18 +7,23 @@ const countDownClock = (number) => {
   let countdown;
   timer(number);
 
+  function updateTimeLeft(then) {
+    const secondsLeft = Math.round((then - Date.now()) / 1000);
+
+    if (secondsLeft <= 0) {
+      //reset counter
+      then = Date.now() + 600 * 1000;
+    }
+
+    displayTimeLeft(secondsLeft);
+  }
+
   function timer(seconds) {
     let then = Date.now() + seconds * 1000;
 
+    updateTimeLeft(then);
     countdown = setInterval(() => {
-      const secondsLeft = Math.round((then - Date.now()) / 1000);
-
-      if (secondsLeft <= 0) {
-        //reset counter
-        then = Date.now() + 600 * 1000;
-      }
-
-      displayTimeLeft(secondsLeft);
+      updateTimeLeft(then);
     }, 1000);
   }
 
