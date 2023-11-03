@@ -27,6 +27,7 @@ body {
   flex-direction: column;
   background: var(--body-bg);
   color: var(--text-dark);
+  font-family: iaWriter, "Courier New", Courier, monospace;
 }
 
 a {
@@ -287,6 +288,7 @@ footer .content {
       flex-direction: row;
 
       .digit {
+        font-family: Anton, Arial, Helvetica, sans-serif;
         background-color: #fef8ef;
         color: #ff4e36;
         padding: 0px 20px;
