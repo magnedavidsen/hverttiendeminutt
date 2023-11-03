@@ -1,12 +1,33 @@
-html,
-body {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+*,
+*::after,
+*::before {
   box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+:root {
+  --primary-color: #ff4e36;
+  --primary-shadow: #c23826;
+  --text-dark: #2d0500;
+  --body-bg: #fef8ef;
+  --footer-bg: #ffc691;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  background: var(--body-bg);
+  color: var(--text-dark);
+  font-family: iaWriter, "Courier New", Courier, monospace;
 }
 
 a {
@@ -32,12 +53,7 @@ a {
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  height: 100%;
-  color: #ffffff;
+  height: ;
 }
 
 .hero {
@@ -49,98 +65,125 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
 
-  .title {
-    margin: 60px 0;
-    font-size: 70px;
-  }
+.hero .title {
+  margin: 60px 0;
+  font-size: 70px;
+}
 
-  .heroText {
-    margin: 80px 0;
-  }
+.hero .heroText {
+  margin: 80px 0;
+  text-align: center;
+  font-size: 1.5625rem;
+}
 
-  .timer-container {
-    font-size: 320px;
-    display: flex;
-    flex-direction: row;
+.hero .timer-container {
+  font-size: 320px;
+  display: flex;
+  flex-direction: row;
+}
 
-    .digit {
-      background-color: #fef8ef;
-      color: #ff4e36;
-      padding: 0px 20px;
-      font-weight: bold;
-      height: 18vw;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      max-height: 350px;
-      box-shadow: 10px 10px 2px 0px rgba(0, 0, 0, 0.3);
-    }
+.digit {
+  background-color: #fef8ef;
+  color: #ff4e36;
+  padding: 0px 20px;
+  font-weight: bold;
+  height: 18vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 350px;
+  box-shadow: 10px 10px 2px 0px rgba(0, 0, 0, 0.3);
+}
 
-    .colon {
-      color: #fef8ef;
-    }
+.colon {
+  color: #fef8ef;
+}
 
-    .minutes {
-      display: flex;
-      gap: 10px;
-    }
+.minutes {
+  display: flex;
+  gap: 10px;
+}
 
-    .seconds {
-      display: flex;
-      gap: 10px;
-    }
-  }
+.seconds {
+  display: flex;
+  gap: 10px;
+}
+
+.content {
+  width: min(777px, 100%);
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+.buttons-container {
+  margin-bottom: 72px;
+  display: flex;
+  flex-direction: row;
+  gap: 180px;
 }
 
 .info-container {
-  color: #000000;
-  background-color: #fef8ef;
+  position: relative;
   width: 100%;
   height: 100%;
+  flex: 1;
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
+  padding-top: 80px;
+}
 
-  .buttons-container {
-    display: flex;
-    flex-direction: row;
-    gap: 180px;
-    margin-top: 100px;
-  }
+.info-container .info-text {
+  max-width: 500px;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 145px;
+}
 
-  .logos-container {
-    margin: 80px 0;
-  }
+.sources {
+  list-style: asterisks;
+}
 
-  .logo-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Four equal-width columns */
-    grid-gap: 20px; /* Space between logos, adjust as needed */
-    justify-items: center; /* Horizontally center items */
-    align-items: center; /* Vertically center items */
-  }
+.sources.content li {
+  margin-left: 100px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
 
-  .logo {
-    width: 100%; /* This will make sure the logos scale to fit their cells. Adjust if needed. */
-    max-width: 100px; /* Optionally set a max width to prevent logos from being too large */
-  }
+.info-container .content {
+  font-size: 2.625rem;
+  line-height: 1.35;
+  margin-bottom: 172px;
+}
 
-  .info-text {
-    max-width: 500px;
-    text-align: center;
-    font-size: 16px;
-    margin-bottom: 145px;
-  }
+.info-container .content p {
+  margin-bottom: 1em;
+}
+
+.round-button-wrapper {
+  --size: min(366px, 80vw);
+  width: var(--size);
+  height: var(--size);
+  position: relative;
+}
+
+.round-button-bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 8px;
+  right: 8px;
+  border-radius: 50%;
+  background: var(--primary-shadow);
 }
 
 .roundButton {
-  width: 366.497px;
-  height: 366.497px;
+  height: 100%;
   transform: rotate(-4deg);
-  border-radius: 366.497px;
-  background: #ff4e36;
+  border-radius: 50%;
+  background: var(--primary-color);
   color: #fef8ef;
   display: flex;
   justify-content: center;
@@ -152,18 +195,48 @@ a {
   text-transform: uppercase;
 }
 
-.rectButton {
+.rect-button-wrapper {
+  position: relative;
+  isolation: isolate;
   width: 427px;
   height: 314px;
+}
+
+.rect-button-bg {
+  position: absolute;
+  inset: 0;
+  background-color: var(--primary-shadow);
+  transform: rotate(2deg);
+}
+
+.rect-button {
+  height: 100%;
+  width: 100%;
   transform: rotate(6deg);
-  flex-shrink: 0;
   color: #fef8ef;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: var(--primary-color);
+
   background: #ff4e36;
   font-size: 32px;
   text-align: center;
+}
+
+footer {
+  background: var(--footer-bg);
+  padding: 45px 0 196px;
+}
+
+footer .content {
+  font-size: 1rem;
+}
+
+@counter-style asterisks {
+  system: symbolic;
+  symbols: "*";
+  suffix: " ";
 }
 
 @media (max-width: 480px) {
@@ -183,6 +256,11 @@ a {
   .buttons-container {
     flex-direction: column;
   }
+
+  .round-button-wrapper,
+  .rect-button-wrapper {
+    margin-inline: auto;
+  }
 }
 
 @media (max-width: 1400px) {
@@ -195,47 +273,47 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  .hero .title {
+    margin: 60px 0;
+  }
 
-    .title {
-      margin: 60px 0;
-    }
+  .hero .heroText {
+    margin: 80px 0;
+  }
 
-    .heroText {
-      margin: 80px 0;
-    }
+  .hero .timer-container {
+    font-size: 18vw;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: row;
+  }
 
-    .timer-container {
-      font-size: 18vw;
-      padding: 0 16px;
-      display: flex;
-      flex-direction: row;
+  .hero .digit {
+    font-family: Anton, Arial, Helvetica, sans-serif;
+    background-color: #fef8ef;
+    color: #ff4e36;
+    padding: 0px 20px;
+    font-weight: bold;
+    height: 18vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 350px;
+    box-shadow: 10px 10px 2px 0px rgba(0, 0, 0, 0.3);
+  }
 
-      .digit {
-        background-color: #fef8ef;
-        color: #ff4e36;
-        padding: 0px 20px;
-        font-weight: bold;
-        height: 18vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        max-height: 350px;
-        box-shadow: 10px 10px 2px 0px rgba(0, 0, 0, 0.3);
-      }
+  .colon {
+    color: #fef8ef;
+  }
 
-      .colon {
-        color: #fef8ef;
-      }
+  .minutes {
+    display: flex;
+    gap: 10px;
+  }
 
-      .minutes {
-        display: flex;
-        gap: 10px;
-      }
-
-      .seconds {
-        display: flex;
-        gap: 10px;
-      }
-    }
+  .seconds {
+    display: flex;
+    gap: 10px;
   }
 }
