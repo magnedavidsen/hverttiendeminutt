@@ -63,26 +63,27 @@ a {
   flex-direction: row;
   gap: 32px;
   text-align: center;
-  margin-bottom: 160px;
-  font-size: 20px;
+  margin-bottom: 8vh;
+  font-size: 25px;
 }
 
 .buttons-container {
   display: flex;
   flex-direction: row;
   gap: 32px;
-  margin-bottom: 100px;
+  margin-bottom: 20vh;
 }
 
 .linkbutton {
   background-color: #db2f20;
   border-radius: 5px;
-  width: 100px;
+  width: 200px;
   color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px;
+  font-size: 25px;
+  padding: 20px;
 }
 
 .linkbutton:hover {
