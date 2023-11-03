@@ -8,11 +8,12 @@ const countDownClock = (number) => {
   timer(number);
 
   function updateTimeLeft(then) {
-    const secondsLeft = Math.round((then - Date.now()) / 1000);
+    let secondsLeft = Math.round((then - Date.now()) / 1000);
 
     if (secondsLeft <= 0) {
       //reset counter
       then = Date.now() + 600 * 1000;
+      secondsLeft = Math.round((then - Date.now()) / 1000);
     }
 
     displayTimeLeft(secondsLeft);
