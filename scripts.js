@@ -38,13 +38,17 @@ const countDownClock = (number) => {
     const secondDigits = d.querySelectorAll(".seconds .digit");
     secondDigits[0].textContent = paddedSeconds[0];
     secondDigits[1].textContent = paddedSeconds[1];
+
+    minutesElement.className = "minutes";
+    secondsElement.className = "seconds";
   }
 };
 
 const now = new Date();
 const minutes = now.getMinutes();
 const ceiling = Math.ceil(minutes / 10) * 10;
-const countdownMinutes = ceiling - minutes;
+const diff = ceiling - minutes;
+const countdownMinutes = diff === 0 ? 10 : diff;
 const countdownSeconds = countdownMinutes * 60 - now.getSeconds();
 
 countDownClock(countdownSeconds);
