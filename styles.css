@@ -14,6 +14,8 @@
   --text-dark: #2d0500;
   --body-bg: #fef8ef;
   --footer-bg: #ffc691;
+  --header-font-stack: Anton, Arial, Helvetica, sans-serif;
+  --body-font-stack: iaWriter, "Courier New", Courier, monospace;
 }
 
 html {
@@ -50,12 +52,12 @@ a.textLink {
 }
 
 .headerText {
-  font-family: Anton, Arial, Helvetica, sans-serif;
+  font-family: var(--header-font-stack);
   visibility: hidden;
 }
 
 .bodyText {
-  font-family: iaWriter, "Courier New", Courier, monospace;
+  font-family: var(--body-font-stack);
 }
 
 .hero {
@@ -263,6 +265,42 @@ footer .content {
   font-size: 1rem;
 }
 
+.image-grid-header {
+  font-family: var(--header-font-stack);
+  font-size: 3rem;
+  margin-top: 64px;
+}
+
+.image-grid {
+  display: grid;
+  gap: 40px;
+  margin-bottom: 64px;
+}
+
+.image-wrapper a {
+  color: inherit;
+  text-decoration: underline;
+  font-size: 1.2rem;
+}
+
+.image-wrapper a:visited {
+  color: inherit;
+}
+
+.image-grid img {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.back-link {
+  color: inherit;
+  font-size: 1.2rem;
+  text-decoration: underline;
+  margin-bottom: 64px;
+  display: inline-block;
+}
+
 @counter-style asterisks {
   system: symbolic;
   symbols: "*";
@@ -322,5 +360,11 @@ footer .content {
   .hero .heroText {
     text-align: center;
     font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 560px) {
+  .image-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
