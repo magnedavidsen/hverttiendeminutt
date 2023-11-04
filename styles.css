@@ -201,10 +201,18 @@ a {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-family: Spline Sans Mono;
+  font-family: Anton;
   font-size: 60px;
   font-weight: 600;
   text-transform: uppercase;
+}
+
+.vipps {
+  position: absolute;
+  top: 77%;
+  left: 27%;
+  color: var(--body-bg);
+  font-size: 25px;
 }
 
 .rect-button-wrapper {
