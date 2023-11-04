@@ -34,6 +34,11 @@ a {
   text-decoration: none;
 }
 
+a.textLink {
+  color: var(--text-dark);
+  text-decoration: underline;
+}
+
 @font-face {
   font-family: "Anton";
   src: url("./assets/fonts/Anton-Regular.ttf") format("truetype");
