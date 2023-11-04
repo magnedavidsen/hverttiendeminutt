@@ -154,10 +154,11 @@ a {
 
 .sources {
   list-style: asterisks;
+  margin-bottom: 30px;
 }
 
 .sources.content li {
-  margin-left: 100px;
+  margin-inline: auto;
   font-size: 1rem;
   margin-bottom: 20px;
 }
@@ -165,7 +166,7 @@ a {
 .info-container .content {
   font-size: 2.625rem;
   line-height: 1.35;
-  margin-bottom: 172px;
+  margin-bottom: 50px;
 }
 
 .info-container .content p {
@@ -298,9 +299,5 @@ footer .content {
   .info-container .content {
     font-size: 1.5rem;
     margin-bottom: 60px;
-  }
-
-  .sources.content li {
-    margin-left: 30px;
   }
 }
