@@ -9,14 +9,13 @@ const countDownClock = (number) => {
 
   function updateTimeLeft(then) {
     let secondsLeft = Math.round((then - Date.now()) / 1000);
+    displayTimeLeft(secondsLeft);
 
     if (secondsLeft <= 0) {
-      //reset counter
-      then = Date.now() + 600 * 1000;
-      secondsLeft = Math.round((then - Date.now()) / 1000);
+      //reset counter to ten minutes
+      clearInterval(countdown);
+      timer(600);
     }
-
-    displayTimeLeft(secondsLeft);
   }
 
   function timer(seconds) {
