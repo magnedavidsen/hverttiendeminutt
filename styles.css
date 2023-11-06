@@ -363,8 +363,20 @@ footer .content {
   }
 }
 
+.desktop-only {
+  display: none;
+}
+
 @media (min-width: 560px) {
   .image-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .desktop-only {
+    display: revert;
+  }
+
+  .mobile-only {
+    display: none;
   }
 }
