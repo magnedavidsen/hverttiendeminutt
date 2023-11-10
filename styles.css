@@ -41,6 +41,12 @@ a.textLink {
   text-decoration: underline;
 }
 
+a.language {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
 @font-face {
   font-family: "Anton";
   src: url("./assets/fonts/Anton-Regular.ttf") format("truetype");
